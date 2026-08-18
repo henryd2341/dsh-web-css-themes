@@ -1,0 +1,6 @@
+# dsh-web-css-themes: host-side plugin row for the Web profile.
+# The package's client half is discovered through the dsh.client declaration
+# in package.json, exactly like dsh-web-plugin-manager.
+- insert:
+    - id: css-themes
+      name: dsh-web-css-themes

@@ -1,0 +1,55 @@
+{
+  "name": "dsh-web-css-themes",
+  "version": "0.1.0",
+  "description": "为 dsh Web UI 提供自定义 CSS 主题的创建、编辑、启用与持久化管理；通过 index tap 自动把激活主题的 <link> 注入 @deepseek-ai/dsh-web-frontend 的 index.html。",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "css",
+    "theme",
+    "web-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henryd2341/dsh-web-css-themes.git"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "examples",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "license": "MIT"
+}
